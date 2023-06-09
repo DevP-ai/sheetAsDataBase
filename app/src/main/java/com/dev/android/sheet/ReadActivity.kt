@@ -9,6 +9,7 @@ import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.android.volley.AuthFailureError
 import com.android.volley.Request
 import com.android.volley.Response
@@ -16,16 +17,21 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import org.json.JSONArray
 import org.json.JSONObject
+import java.util.*
+import kotlin.collections.ArrayList
 
 class ReadActivity : AppCompatActivity() {
-
+    private lateinit var swipeRefreshLayout: SwipeRefreshLayout
     lateinit var recyclerView: RecyclerView
     lateinit var layoutManager: LinearLayoutManager
     lateinit var  adapter: ReadAdapter
    private lateinit var dialog: Dialog
+   private lateinit var detailsList:ArrayList<EmpDetails>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_read)
+
+        swipeRefreshLayout=findViewById(R.id.container)
 
         dialog= Dialog(this)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -38,8 +44,9 @@ class ReadActivity : AppCompatActivity() {
         recyclerView=findViewById(R.id.recyclerView)
         layoutManager=LinearLayoutManager(this)
 
-        val detailsList= arrayListOf<EmpDetails>()
+        detailsList= arrayListOf()
 
+        adapter=ReadAdapter(this,detailsList)
 
         val queue=Volley.newRequestQueue(this)
         var url = "https://script.google.com/macros/s/AKfycbwrfU5PXJIJY2YTx8vMPf8waHgrYoO4BKr3WuV6YR2ybOMprNqVT8-En3_HcBvN95lx/exec?"
@@ -75,5 +82,14 @@ class ReadActivity : AppCompatActivity() {
             }
         }
         queue.add(jsonObjectRequest)
+
+        adapter.notifyDataSetChanged()
+        swipeRefreshLayout.setOnRefreshListener {
+            swipeRefreshLayout.isRefreshing=false
+            Collections.shuffle(detailsList, Random(System.currentTimeMillis()))
+
+            adapter.notifyDataSetChanged()
+        }
     }
+
 }

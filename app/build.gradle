@@ -53,4 +53,7 @@ dependencies {
 
     //Custom Dialog
     implementation 'com.jpardogo.googleprogressbar:library:1.2.0'
+
+    //Pull Refresh
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
 }
