@@ -51,4 +51,6 @@ dependencies {
     implementation 'com.github.andreasagap:LoadingButtonLibrary:v1.0'
 
 
+    //Custom Dialog
+    implementation 'com.jpardogo.googleprogressbar:library:1.2.0'
 }

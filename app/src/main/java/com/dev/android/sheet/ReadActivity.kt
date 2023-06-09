@@ -1,8 +1,10 @@
 package com.dev.android.sheet
 
+import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.Window
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,10 +22,16 @@ class ReadActivity : AppCompatActivity() {
     lateinit var recyclerView: RecyclerView
     lateinit var layoutManager: LinearLayoutManager
     lateinit var  adapter: ReadAdapter
-
+   private lateinit var dialog: Dialog
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_read)
+
+        dialog= Dialog(this)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setContentView(R.layout.progress_bar)
+        dialog.setCanceledOnTouchOutside(false)
+        dialog.show()
 
         title="Employee Details"
 
@@ -40,6 +48,7 @@ class ReadActivity : AppCompatActivity() {
         val jsonObjectRequest=object :JsonObjectRequest(
             Request.Method.GET,url,null,
             Response.Listener {
+                dialog.dismiss()
                 val data=it.getJSONArray("items")
                 for(i in 0 until(data.length())){
                     val empJSONObject=data.getJSONObject(i)
@@ -57,6 +66,7 @@ class ReadActivity : AppCompatActivity() {
                 recyclerView.layoutManager=layoutManager
             },
             Response.ErrorListener {
+                dialog.dismiss()
                 Toast.makeText(this,it.toString(),Toast.LENGTH_SHORT).show()
             }
         ){
