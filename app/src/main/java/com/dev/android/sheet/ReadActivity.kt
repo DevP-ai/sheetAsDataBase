@@ -86,6 +86,7 @@ class ReadActivity : AppCompatActivity() {
         adapter.notifyDataSetChanged()
         swipeRefreshLayout.setOnRefreshListener {
             swipeRefreshLayout.isRefreshing=false
+
             Collections.shuffle(detailsList, Random(System.currentTimeMillis()))
 
             adapter.notifyDataSetChanged()

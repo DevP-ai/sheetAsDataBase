@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Sheet</string>
+    <string name="enter_your_name">Enter your name*</string>
+    <string name="enter_your_email">Enter your email*</string>
+    <string name="confirm_password">Confirm Password*</string>
+    <string name="enter_password">Enter Password*</string>
+    <string name="welcome">Welcome</string>
+    <string name="let_s_register_yourself">Let\'s register yourself</string>
+    <string name="user_type">User Type*:</string>
+    <string name="admin">Admin</string>
+    <string name="sub_admin">Sub Admin</string>
+    <string name="employee">Employee</string>
+    <string name="register">Register</string>
+    <string name="already_have_an_account_login">Already have an Account? Login</string>
+    <string name="forget_password">Forget Password</string>
 </resources>
