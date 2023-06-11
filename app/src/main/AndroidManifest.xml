@@ -15,14 +15,14 @@
         android:theme="@style/Theme.Sheet"
         tools:targetApi="31">
         <activity
-            android:name=".Validation.LogInActivity"
+            android:name=".auth.LogInActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Validation.SignUpActivity"
+            android:name=".auth.SignUpActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

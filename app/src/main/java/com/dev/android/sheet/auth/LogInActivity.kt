@@ -1,14 +1,12 @@
-package com.dev.android.sheet.Validation
+package com.dev.android.sheet.auth
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.dev.android.sheet.R
 
-class SignUpActivity : AppCompatActivity() {
+class LogInActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sign_up)
-
-        supportActionBar!!.hide()
+        setContentView(R.layout.activity_log_in)
     }
 }
