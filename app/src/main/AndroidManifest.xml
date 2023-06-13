@@ -34,14 +34,14 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".ReadActivity"
+            android:name=".admin.ReadActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".OptionsActivity"
+            android:name=".admin.OptionsActivity"
             android:exported="false">
 
 
@@ -50,7 +50,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".admin.MainActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

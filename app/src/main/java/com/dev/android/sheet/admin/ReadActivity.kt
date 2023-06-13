@@ -1,22 +1,20 @@
-package com.dev.android.sheet
+package com.dev.android.sheet.admin
 
 import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.view.Window
-import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import com.android.volley.AuthFailureError
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
-import org.json.JSONArray
-import org.json.JSONObject
+import com.dev.android.sheet.model.EmpDetails
+import com.dev.android.sheet.R
+import com.dev.android.sheet.adapter.ReadAdapter
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -46,7 +44,7 @@ class ReadActivity : AppCompatActivity() {
 
         detailsList= arrayListOf()
 
-        adapter=ReadAdapter(this,detailsList)
+        adapter= ReadAdapter(this,detailsList)
 
         val queue=Volley.newRequestQueue(this)
         var url = "https://script.google.com/macros/s/AKfycbwrfU5PXJIJY2YTx8vMPf8waHgrYoO4BKr3WuV6YR2ybOMprNqVT8-En3_HcBvN95lx/exec?"
@@ -59,7 +57,7 @@ class ReadActivity : AppCompatActivity() {
                 val data=it.getJSONArray("items")
                 for(i in 0 until(data.length())){
                     val empJSONObject=data.getJSONObject(i)
-                    val empObject=EmpDetails(
+                    val empObject= EmpDetails(
                         empJSONObject.getString("date"),
                         empJSONObject.getString("adhar"),
                         empJSONObject.getString("salary"),
@@ -68,7 +66,7 @@ class ReadActivity : AppCompatActivity() {
                     )
                     detailsList.add(empObject)
                 }
-                adapter=ReadAdapter(this,detailsList)
+                adapter= ReadAdapter(this,detailsList)
                 recyclerView.adapter=adapter
                 recyclerView.layoutManager=layoutManager
             },

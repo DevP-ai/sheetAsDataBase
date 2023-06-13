@@ -1,4 +1,4 @@
-package com.dev.android.sheet
+package com.dev.android.sheet.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,7 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.coroutines.flow.combine
+import com.dev.android.sheet.model.EmpDetails
+import com.dev.android.sheet.R
 
 class ReadAdapter(val context: Context,val detailsList:ArrayList<EmpDetails>)
     :RecyclerView.Adapter<ReadAdapter.DetailsViewHolder>(){

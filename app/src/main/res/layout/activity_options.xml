@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#9DA3D5"
-    tools:context=".OptionsActivity">
+    tools:context=".admin.OptionsActivity">
 
 
     <androidx.cardview.widget.CardView

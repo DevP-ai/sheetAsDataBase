@@ -1,11 +1,13 @@
 package com.dev.android.sheet.auth
 
 //import android.content.SharedPreferences
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.RadioButton
 import android.widget.Toast
 import com.dev.android.sheet.R
+import com.dev.android.sheet.admin.OptionsActivity
 import com.dev.android.sheet.databinding.ActivitySignUpBinding
 import com.dev.android.sheet.model.UserDataModel
 import com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton
@@ -32,6 +34,11 @@ class SignUpActivity : AppCompatActivity() {
         supportActionBar!!.hide()
         firebaseAuth=FirebaseAuth.getInstance()
 
+        if(firebaseAuth.currentUser!=null){
+            startActivity(Intent(this,OptionsActivity::class.java))
+            finish()
+        }
+
         binding.apply {
             userRadioGroup.setOnCheckedChangeListener {_, checkedId ->
 //                storingUserType(checkedId)
@@ -41,6 +48,7 @@ class SignUpActivity : AppCompatActivity() {
                 btnDialog.startAnimation()
                 createNewUser()
             }
+            txtLogin.setOnClickListener { startActivity(Intent(this@SignUpActivity,LogInActivity::class.java)) }
         }
 
     }

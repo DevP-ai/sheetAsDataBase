@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#9DA3D5"
     android:id="@+id/container"
-    tools:context=".ReadActivity">
+    tools:context=".admin.ReadActivity">
 
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
