@@ -1,6 +1,6 @@
 package com.dev.android.sheet.auth
 
-import android.content.SharedPreferences
+//import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.RadioButton
@@ -16,9 +16,9 @@ import com.google.firebase.database.FirebaseDatabase
 class SignUpActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignUpBinding
     private lateinit var firebaseAuth: FirebaseAuth
-    private lateinit var sharedPreferences: SharedPreferences
+//    private late init var sharedPreferences: SharedPreferences
     private lateinit var databaseReference: DatabaseReference
-    private var userPreferences:String?=null
+//    private var userPreferences:String?=null
     private var types:String?=null
     private lateinit var btnDialog:CircularProgressButton
 

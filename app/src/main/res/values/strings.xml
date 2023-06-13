@@ -14,4 +14,6 @@
     <string name="already_have_an_account_login">Already have an Account? Login</string>
     <string name="forget_password">Forget Password</string>
     <string name="subadmin">SubAdmin</string>
+    <string name="please_login_your_account">Please login your account</string>
+    <string name="log_in">Log In</string>
 </resources>
