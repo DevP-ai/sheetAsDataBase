@@ -9,11 +9,12 @@ import android.widget.Toast
 import com.dev.android.sheet.R
 import com.dev.android.sheet.admin.OptionsActivity
 import com.dev.android.sheet.databinding.ActivitySignUpBinding
+import com.dev.android.sheet.employee.EmpDataActivity
 import com.dev.android.sheet.model.UserDataModel
+import com.dev.android.sheet.subadmin.ChooseActivity
 import com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 
 class SignUpActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignUpBinding
@@ -34,10 +35,61 @@ class SignUpActivity : AppCompatActivity() {
         supportActionBar!!.hide()
         firebaseAuth=FirebaseAuth.getInstance()
 
-        if(firebaseAuth.currentUser!=null){
-            startActivity(Intent(this,OptionsActivity::class.java))
-            finish()
-        }
+        val currentUserId=firebaseAuth.currentUser!!.uid
+
+        val adminDatabase=FirebaseDatabase.getInstance().getReference("Admin")
+        adminDatabase.addListenerForSingleValueEvent(object: ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for (childrenSnap in snapshot.children){
+                    val adminId=childrenSnap.child("userId").value.toString()
+                    if(adminId==currentUserId){
+                        startActivity(Intent(this@SignUpActivity, OptionsActivity::class.java))
+                        finish()
+                    }
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(this@SignUpActivity,error.message,Toast.LENGTH_SHORT).show()
+            }
+
+        })
+
+        val employeeDataBase=FirebaseDatabase.getInstance().getReference("Employee")
+        employeeDataBase.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for(empSnap in snapshot.children){
+                    val empId=empSnap.child("userId").value.toString()
+                    if(empId==currentUserId){
+                        startActivity(Intent(this@SignUpActivity, EmpDataActivity::class.java))
+                        finish()
+                    }
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(this@SignUpActivity,error.message,Toast.LENGTH_SHORT).show()
+            }
+
+        })
+
+        val subAdminDataBase=FirebaseDatabase.getInstance().getReference("SubAdmin")
+        subAdminDataBase.addListenerForSingleValueEvent(object:ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for(subAdminSnap in snapshot.children){
+                    val subAdminId=subAdminSnap.child("userId").value.toString()
+                    if(subAdminId==currentUserId){
+                        startActivity(Intent(this@SignUpActivity, ChooseActivity::class.java))
+                        finish()
+                    }
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(this@SignUpActivity,error.message,Toast.LENGTH_SHORT).show()
+            }
+
+        })
 
         binding.apply {
             userRadioGroup.setOnCheckedChangeListener {_, checkedId ->

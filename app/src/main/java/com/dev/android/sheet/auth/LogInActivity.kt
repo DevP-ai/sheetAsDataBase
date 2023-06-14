@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.widget.Toast
 import com.dev.android.sheet.admin.OptionsActivity
 import com.dev.android.sheet.databinding.ActivityLogInBinding
+import com.dev.android.sheet.employee.EmpDataActivity
+import com.dev.android.sheet.subadmin.ChooseActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -60,6 +62,42 @@ class LogInActivity : AppCompatActivity() {
 
                         override fun onCancelled(error: DatabaseError) {
                           Toast.makeText(this@LogInActivity,error.message,Toast.LENGTH_SHORT).show()
+                        }
+
+                    })
+
+                    val employeeDataBase=FirebaseDatabase.getInstance().getReference("Employee")
+                    employeeDataBase.addListenerForSingleValueEvent(object :ValueEventListener{
+                        override fun onDataChange(snapshot: DataSnapshot) {
+                            for(empSnap in snapshot.children){
+                                val empId=empSnap.child("userId").value.toString()
+                                if(empId==currentUserId){
+                                    startActivity(Intent(this@LogInActivity,EmpDataActivity::class.java))
+                                    finish()
+                                }
+                            }
+                        }
+
+                        override fun onCancelled(error: DatabaseError) {
+                           Toast.makeText(this@LogInActivity,error.message,Toast.LENGTH_SHORT).show()
+                         }
+
+                    })
+
+                    val subAdminDataBase=FirebaseDatabase.getInstance().getReference("SubAdmin")
+                    subAdminDataBase.addListenerForSingleValueEvent(object:ValueEventListener{
+                        override fun onDataChange(snapshot: DataSnapshot) {
+                            for(subAdminSnap in snapshot.children){
+                                val subAdminId=subAdminSnap.child("userId").value.toString()
+                                if(subAdminId==currentUserId){
+                                    startActivity(Intent(this@LogInActivity,ChooseActivity::class.java))
+                                    finish()
+                                }
+                            }
+                        }
+
+                        override fun onCancelled(error: DatabaseError) {
+                            Toast.makeText(this@LogInActivity,error.message,Toast.LENGTH_SHORT).show()
                         }
 
                     })
