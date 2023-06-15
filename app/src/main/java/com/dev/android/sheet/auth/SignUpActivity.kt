@@ -35,61 +35,7 @@ class SignUpActivity : AppCompatActivity() {
         supportActionBar!!.hide()
         firebaseAuth=FirebaseAuth.getInstance()
 
-        val currentUserId=firebaseAuth.currentUser!!.uid
 
-        val adminDatabase=FirebaseDatabase.getInstance().getReference("Admin")
-        adminDatabase.addListenerForSingleValueEvent(object: ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                for (childrenSnap in snapshot.children){
-                    val adminId=childrenSnap.child("userId").value.toString()
-                    if(adminId==currentUserId){
-                        startActivity(Intent(this@SignUpActivity, OptionsActivity::class.java))
-                        finish()
-                    }
-                }
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(this@SignUpActivity,error.message,Toast.LENGTH_SHORT).show()
-            }
-
-        })
-
-        val employeeDataBase=FirebaseDatabase.getInstance().getReference("Employee")
-        employeeDataBase.addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                for(empSnap in snapshot.children){
-                    val empId=empSnap.child("userId").value.toString()
-                    if(empId==currentUserId){
-                        startActivity(Intent(this@SignUpActivity, EmpDataActivity::class.java))
-                        finish()
-                    }
-                }
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(this@SignUpActivity,error.message,Toast.LENGTH_SHORT).show()
-            }
-
-        })
-
-        val subAdminDataBase=FirebaseDatabase.getInstance().getReference("SubAdmin")
-        subAdminDataBase.addListenerForSingleValueEvent(object:ValueEventListener{
-            override fun onDataChange(snapshot: DataSnapshot) {
-                for(subAdminSnap in snapshot.children){
-                    val subAdminId=subAdminSnap.child("userId").value.toString()
-                    if(subAdminId==currentUserId){
-                        startActivity(Intent(this@SignUpActivity, ChooseActivity::class.java))
-                        finish()
-                    }
-                }
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(this@SignUpActivity,error.message,Toast.LENGTH_SHORT).show()
-            }
-
-        })
 
         binding.apply {
             userRadioGroup.setOnCheckedChangeListener {_, checkedId ->
