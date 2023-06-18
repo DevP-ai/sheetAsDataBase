@@ -31,12 +31,12 @@ class ChooseActivity : AppCompatActivity() {
         }
 
 
-        binding.SubAdminEnterData.setOnClickListener {
-            startActivity(Intent(this,EnterDataActivity::class.java))
+        binding.SubAdminReadData.setOnClickListener {
+            startActivity(Intent(this,ReadDataActivity::class.java))
         }
 
         binding.SubAdminEnterData.setOnClickListener {
-            startActivity(Intent(this,ReadDataActivity::class.java))
+            startActivity(Intent(this,EnterDataActivity::class.java))
         }
 
     }

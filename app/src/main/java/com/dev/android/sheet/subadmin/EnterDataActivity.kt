@@ -8,5 +8,7 @@ class EnterDataActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_enter_data)
+
+        title="Data Entry Form"
     }
 }
