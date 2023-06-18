@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import com.dev.android.sheet.R
 import com.dev.android.sheet.auth.LogInActivity
@@ -26,15 +27,16 @@ class ChooseActivity : AppCompatActivity() {
             FirebaseAuth.getInstance().signOut()
             startActivity(Intent(this,LogInActivity::class.java))
             finish()
+            Toast.makeText(this,"Logout",Toast.LENGTH_SHORT).show()
         }
 
 
         binding.SubAdminEnterData.setOnClickListener {
-
+            startActivity(Intent(this,EnterDataActivity::class.java))
         }
 
         binding.SubAdminEnterData.setOnClickListener {
-
+            startActivity(Intent(this,ReadDataActivity::class.java))
         }
 
     }
