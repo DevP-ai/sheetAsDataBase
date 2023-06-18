@@ -46,7 +46,10 @@ class SignUpActivity : AppCompatActivity() {
                 btnDialog.startAnimation()
                 createNewUser()
             }
-            txtLogin.setOnClickListener { startActivity(Intent(this@SignUpActivity,LogInActivity::class.java)) }
+            txtLogin.setOnClickListener {
+                startActivity(Intent(this@SignUpActivity,LogInActivity::class.java))
+                 finish()
+            }
         }
 
     }

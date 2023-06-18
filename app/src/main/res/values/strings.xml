@@ -16,4 +16,5 @@
     <string name="subadmin">SubAdmin</string>
     <string name="please_login_your_account">Please login your account</string>
     <string name="log_in">Log In</string>
+    <string name="don_t_have_account_register_here">Don\'t have account? Register here</string>
 </resources>

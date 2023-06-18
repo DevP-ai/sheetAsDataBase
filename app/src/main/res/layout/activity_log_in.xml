@@ -132,6 +132,18 @@
                 android:layout_marginTop="17dp"
                 android:layout_marginStart="50dp"
                 android:textStyle="bold"
+                android:visibility="invisible"
+                android:textColor="@color/teal_700"/>
+
+
+            <TextView
+                android:id="@+id/txtSignUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/don_t_have_account_register_here"
+                android:layout_marginTop="17dp"
+                android:layout_marginStart="50dp"
+                android:textStyle="bold"
                 android:textColor="@color/teal_700"/>
         </LinearLayout>
 
