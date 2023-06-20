@@ -52,7 +52,7 @@ dependencies {
     implementation 'com.github.andreasagap:LoadingButtonLibrary:v1.0'
 
 
-    //Custom Dialog Button
+    //Custom Dialog
     implementation 'com.jpardogo.googleprogressbar:library:1.2.0'
 
     //Pull Refresh
@@ -62,4 +62,16 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:32.1.0')
     implementation 'com.google.firebase:firebase-auth-ktx'
     implementation 'com.google.firebase:firebase-database-ktx'
+
+
+    //Navigation component
+    def nav_version = "2.5.3"
+    //noinspection GradleDependency
+    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    //noinspection GradleDependency
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+
+    //SmoothBottomBar
+    implementation 'com.github.ibrahimsn98:SmoothBottomBar:1.7.9'
+
 }
