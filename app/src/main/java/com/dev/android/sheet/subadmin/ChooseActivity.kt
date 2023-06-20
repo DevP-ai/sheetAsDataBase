@@ -26,7 +26,7 @@ class ChooseActivity : AppCompatActivity() {
         logout.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
             startActivity(Intent(this,LogInActivity::class.java))
-            finish()
+            this.finish()
             Toast.makeText(this,"Logout",Toast.LENGTH_SHORT).show()
         }
 

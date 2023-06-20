@@ -87,7 +87,7 @@ class SplashScreenActivity : AppCompatActivity() {
                             }
                         }
                         if( existedEmpId== currentUserId){
-                            val intent = Intent(this@SplashScreenActivity, ChooseActivity::class.java)
+                            val intent = Intent(this@SplashScreenActivity,EmpDataActivity::class.java)
                             startActivity(intent)
                             finish()
                         }
