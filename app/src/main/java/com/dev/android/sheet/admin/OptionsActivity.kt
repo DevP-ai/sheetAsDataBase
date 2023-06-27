@@ -4,8 +4,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
+import androidx.navigation.NavController
+import androidx.navigation.NavDestination
+import androidx.navigation.fragment.findNavController
 import com.dev.android.sheet.R
 import com.dev.android.sheet.auth.LogInActivity
 import com.dev.android.sheet.databinding.ActivityOptionsBinding
@@ -31,6 +35,7 @@ class OptionsActivity : AppCompatActivity() {
             this.finish()
             Toast.makeText(this,"Logout",Toast.LENGTH_SHORT).show()
         }
+
 
 
         binding.enterData.setOnClickListener {

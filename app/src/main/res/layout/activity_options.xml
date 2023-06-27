@@ -7,54 +7,54 @@
     tools:context=".admin.OptionsActivity">
 
 
-<!--    <androidx.cardview.widget.CardView-->
-<!--        android:id="@+id/enterData"-->
-<!--        android:layout_width="300dp"-->
-<!--        android:layout_height="80dp"-->
-<!--        app:cardCornerRadius="10dp"-->
-<!--        app:cardElevation="10dp"-->
-<!--        android:layout_marginTop="100dp"-->
-<!--        android:backgroundTint="@color/teal_200"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent">-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/enterData"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        android:layout_marginTop="100dp"
+        android:backgroundTint="@color/teal_200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-<!--        <TextView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:gravity="center"-->
-<!--            android:text="Enter Data"-->
-<!--            android:textAlignment="center"-->
-<!--            android:textColor="@color/black"-->
-<!--            android:textSize="30sp"-->
-<!--            android:textStyle="bold" />-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Enter Data"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
-<!--    </androidx.cardview.widget.CardView>-->
+    </androidx.cardview.widget.CardView>
 
-<!--    <androidx.cardview.widget.CardView-->
-<!--        android:id="@+id/readData"-->
-<!--        android:layout_width="300dp"-->
-<!--        android:layout_height="80dp"-->
-<!--        android:backgroundTint="@color/teal_200"-->
-<!--        app:cardCornerRadius="10dp"-->
-<!--        app:cardElevation="10dp"-->
-<!--        android:layout_marginTop="50dp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/enterData">-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/readData"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:backgroundTint="@color/teal_200"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterData">
 
-<!--        <TextView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:gravity="center"-->
-<!--            android:text="Read Data"-->
-<!--            android:textAlignment="center"-->
-<!--            android:textColor="@color/black"-->
-<!--            android:textSize="30sp"-->
-<!--            android:textStyle="bold" />-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Read Data"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
 
-<!--    </androidx.cardview.widget.CardView>-->
+    </androidx.cardview.widget.CardView>
 
 
 
