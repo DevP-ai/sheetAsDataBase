@@ -22,28 +22,31 @@ class OptionsActivity : AppCompatActivity() {
         binding=ActivityOptionsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        this.supportActionBar!!.displayOptions=ActionBar.DISPLAY_SHOW_CUSTOM
-
-        supportActionBar!!.setDisplayShowCustomEnabled(true)
-        supportActionBar!!.setCustomView(R.layout.custom_bar)
-
-        var logout=supportActionBar!!.customView.findViewById<ImageView>(R.id.imgLogout)
-
-        logout.setOnClickListener {
-            FirebaseAuth.getInstance().signOut()
-            startActivity(Intent(this,LogInActivity::class.java))
-            this.finish()
-            Toast.makeText(this,"Logout",Toast.LENGTH_SHORT).show()
-        }
+        
 
 
+//        this.supportActionBar!!.displayOptions=ActionBar.DISPLAY_SHOW_CUSTOM
+//
+//        supportActionBar!!.setDisplayShowCustomEnabled(true)
+//        supportActionBar!!.setCustomView(R.layout.custom_bar)
+//
+//        var logout=supportActionBar!!.customView.findViewById<ImageView>(R.id.imgLogout)
+//
+//        logout.setOnClickListener {
+//            FirebaseAuth.getInstance().signOut()
+//            startActivity(Intent(this,LogInActivity::class.java))
+//            this.finish()
+//            Toast.makeText(this,"Logout",Toast.LENGTH_SHORT).show()
+//        }
 
-        binding.enterData.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
-        }
 
-        binding.readData.setOnClickListener {
-            startActivity(Intent(this, ReadActivity::class.java))
-        }
+
+//        binding.enterData.setOnClickListener {
+//            startActivity(Intent(this, MainActivity::class.java))
+//        }
+//
+//        binding.readData.setOnClickListener {
+//            startActivity(Intent(this, ReadActivity::class.java))
+//        }
     }
 }
