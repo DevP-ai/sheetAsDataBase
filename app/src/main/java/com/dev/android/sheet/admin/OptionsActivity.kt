@@ -22,8 +22,22 @@ class OptionsActivity : AppCompatActivity() {
         binding=ActivityOptionsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        
+        val navHost=supportFragmentManager.findFragmentById(R.id.fragmentContainerView)!!.findNavController()
 
+        val popupMenu=PopupMenu(this,null)
+        popupMenu.inflate(R.menu.bottom_menu)
+        binding.bottomBar.setupWithNavController(popupMenu.menu,navHost)
+
+//        navHost.addOnDestinationChangedListener(object :NavController.OnDestinationChangedListener{
+//            override fun onDestinationChanged(
+//                controller: NavController,
+//                destination: NavDestination,
+//                arguments: Bundle?
+//            ) {
+//
+//            }
+//
+//        })
 
 //        this.supportActionBar!!.displayOptions=ActionBar.DISPLAY_SHOW_CUSTOM
 //
