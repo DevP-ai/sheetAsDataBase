@@ -3,12 +3,103 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#C1C5D3"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".adminFragment.ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Profile" />
+   <androidx.cardview.widget.CardView
+       android:backgroundTint="@color/black"
+       android:layout_width="match_parent"
+       android:layout_height="150dp">
 
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="Admin"
+           android:layout_gravity="center"
+           android:textStyle="bold"
+           android:gravity="center_horizontal"
+           android:textColor="@color/white"
+           android:textSize="40sp"/>
+
+   </androidx.cardview.widget.CardView>
+
+
+
+  <androidx.cardview.widget.CardView
+      app:cardCornerRadius="20dp"
+      app:cardElevation="10dp"
+      android:layout_marginStart="10dp"
+      android:layout_marginEnd="10dp"
+      app:cardBackgroundColor="#EFEFF4"
+      android:layout_marginTop="160dp"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+      <LinearLayout
+          android:layout_marginTop="20dp"
+          android:orientation="horizontal"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content">
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Name: "
+              android:textSize="25sp"
+              android:layout_marginStart="10dp"
+              android:textStyle="bold"
+              android:textColor="@color/blue"/>
+
+          <TextView
+              android:id="@+id/profileName"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="XYZ"
+              android:textSize="20sp"
+              android:layout_marginStart="10dp"
+              android:textColor="@color/black"/>
+
+      </LinearLayout>
+
+
+      <LinearLayout
+          android:orientation="horizontal"
+          android:layout_marginTop="60dp"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content">
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Email: "
+              android:textSize="25sp"
+              android:layout_marginStart="10dp"
+              android:textStyle="bold"
+              android:textColor="@color/blue"/>
+
+          <TextView
+              android:id="@+id/profileEmail"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="XYZ@gmail.com"
+              android:textSize="20sp"
+              android:layout_marginStart="10dp"
+              android:textColor="@color/black"/>
+
+      </LinearLayout>
+
+      <TextView
+          android:id="@+id/txtLogout"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Logout"
+          android:textSize="20sp"
+          android:layout_marginBottom="20dp"
+          android:textColor="@color/blue"
+          android:textStyle="bold"
+          android:layout_marginTop="150dp"
+          android:layout_gravity="center_horizontal"/>
+
+  </androidx.cardview.widget.CardView>
 </FrameLayout>
