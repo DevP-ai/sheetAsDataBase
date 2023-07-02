@@ -25,10 +25,10 @@ class ReadDataActivity : AppCompatActivity() {
 
         title="User Data"
 
-        subAdminRecyclerView=findViewById(R.id.SubAdminRecyclerView)
-        layoutManager= LinearLayoutManager(this)
-        details= arrayListOf()
-        adapter= ReadAdapter(this,details)
+//        subAdminRecyclerView=findViewById(R.id.SubAdminRecyclerView)
+//        layoutManager= LinearLayoutManager(this)
+//        details= arrayListOf()
+//        adapter= ReadAdapter(this,details)
 
         val queue= Volley.newRequestQueue(this)
         var url = "https://script.google.com/macros/s/AKfycbwrfU5PXJIJY2YTx8vMPf8waHgrYoO4BKr3WuV6YR2ybOMprNqVT8-En3_HcBvN95lx/exec?"
