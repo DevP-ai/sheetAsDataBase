@@ -3,12 +3,100 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".subadminFragment.SubAdminProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="SubAdmin Profile" />
+        android:layout_height="150dp"
+        android:gravity="center"
+        android:background="@color/black">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sub Admin"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="40sp"/>
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:cardBackgroundColor="#EFEFF4"
+        android:layout_marginTop="160dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name: "
+                android:textSize="25sp"
+                android:layout_marginStart="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/blue"/>
+
+            <TextView
+                android:id="@+id/subProfileName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Loading........"
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/black"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginTop="60dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email: "
+                android:textSize="25sp"
+                android:layout_marginStart="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/blue"/>
+
+            <TextView
+                android:id="@+id/subProfileEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Loading........"
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/black"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/subTxtLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:textSize="20sp"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/blue"
+            android:textStyle="bold"
+            android:layout_marginTop="150dp"
+            android:layout_gravity="center_horizontal"/>
+
+    </androidx.cardview.widget.CardView>
 
 </FrameLayout>
